@@ -1,0 +1,17 @@
+# 致谢 / Credits
+
+## memory-eternal
+
+本项目的**界面部分**取自 [memory-eternal](https://github.com/EternalNight996/memory-eternal)（MIT，Copyright (c) 2026 EternalNight996）：
+
+- `lib/ui/eternal.css` —— 从它的 Web 页面扒下来的样式，作用域到 `.ms-eternal` 下，删掉了我们用不到的规则；
+- 面板里「记忆库」那一页的布局与类名（`mc-card` / `mc-chip` / `mc-v5-*` / `mc-rail*` 等）也照着它的结构做。
+
+「每轮聊完自动沉淀一轮对话」这个机制，也是看了它的 `lib/capture.js` 之后学的思路
+（它用 `agent/turn-stopping` + 后台队列），代码是我们重写的。
+
+如果你要用这一套，请同样保留上面这条版权声明。
+
+## 其它
+
+- 数据模型（话 / 事 / 版本 / 阶段 / 决定 五层）、判工流程、沉淀器提示词、写入与查询层，是本项目自己写的。

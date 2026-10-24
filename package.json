@@ -1,0 +1,64 @@
+{
+  "name": "dsh-mindsea",
+  "version": "0.3.1",
+  "private": true,
+  "type": "module",
+  "description": "识海 MindSea —— 给 DeepSeek Harness 加一套会自己长的记忆：每轮聊完自动沉淀，话 / 事 / 版本 / 阶段 / 决定 五层结构，带一块能翻能筛的面板",
+  "license": "MIT",
+  "author": "MindSea contributors",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "memory",
+    "sqlite"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./query": "./lib/query.mjs",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib/api.mjs",
+    "lib/capture.mjs",
+    "lib/query.mjs",
+    "lib/routes.mjs",
+    "lib/sea-svg.mjs",
+    "lib/tail.mjs",
+    "lib/write.mjs",
+    "lib/ui/eternal.css",
+    "scripts/init-db.mjs",
+    "test/capture-selftest.mjs",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "init": "node scripts/init-db.mjs",
+    "test": "node test/capture-selftest.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-layout"
+      ]
+    }
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}

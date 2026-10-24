@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Mindsea",
+    "description": "Three agent tools (memory_search / memory_event / memory_write) plus a sidebar panel with nine read-only pages over the sea2.db memory skeleton: word wall, workflows, nebula, persona, timeline, forgetting, wandering, diary, automation."
+  }
+}

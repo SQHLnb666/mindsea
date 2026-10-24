@@ -1,0 +1,17 @@
+# 识海 MindSea（dsh-mindsea）
+#
+# 装进 DSH profile 之后会注册三个 agent 工具：
+#   memory_search(q, day, emo)   撞词 / 撞时间 / 撞七情 → 命中的事（按命中条数排）
+#   memory_event(name)           给事名，摊开 版本 → 阶段 → 决定
+#   memory_write(items)          把判好的话写进库（事 / 版本 / 阶段同名就复用）
+#
+# 另外挂两个钩子：
+#   system-prompt/assemble       每个会话第一轮，把最近 10 句原话推进系统提示词，新窗口接得上上一场
+#   agent/turn-stopping          每轮聊完自动沉淀（判完直接落库；想关就给下面那行加 config: { autoCapture: false }）
+#
+# 库路径默认按 `new URL('../sea2.db', import.meta.url)` 算（也就是这个插件目录的上一层）；
+# 要换库就设环境变量 DSH_MINDSEA_DB，或者给这一行加 config: { dbPath: '...' }。
+# 第一次用先跑一次 `node scripts/init-db.mjs` 建一个空库。
+- insert:
+    - id: mindsea
+      name: 'dsh-mindsea'
