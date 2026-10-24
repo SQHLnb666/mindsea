@@ -1,0 +1,11 @@
+sea2.db
+sea2.db-*
+*.db
+*.db-*
+data/
+node_modules/
+*.log
+*.bak
+*.bak-*
+.DS_Store
+Thumbs.db
